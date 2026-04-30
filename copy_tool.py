@@ -8,8 +8,8 @@ import requests    # 서버 데이터 확인용 (pip install requests 필요)
 
 # --- 설정 및 디자인 상수 ---
 CURRENT_VERSION = "1.1.0"  # 현재 프로그램 버전
-# 버전 정보를 확인할 URL (예: GitHub Raw 링크 또는 개인 서버 주소)
-UPDATE_URL = "https://raw.githubusercontent.com/사용자명/저장소/main/version.json"
+# 버전 정보를 확인할 URL (GitHub의 Raw 파일 주소를 사용하세요)
+UPDATE_URL = "https://raw.githubusercontent.com/snelyu/MyQuickPhrases/main/version.json"
 
 COLOR_BG = "#F8FAFC"
 COLOR_HEADER_BG = "#F1F3F4"
@@ -76,7 +76,7 @@ class MyQuickPhrasesApp:
         self.setup_ui()
         self.root.bind("<ButtonRelease-1>", self.on_release)
         
-        # 시작 시 업데이트 확인 (비동기 처리가 좋지만 단순하게 구현)
+        # 시작 시 업데이트 확인
         self.root.after(1000, self.check_update)
 
     def setup_ui(self):
@@ -100,7 +100,7 @@ class MyQuickPhrasesApp:
             elif "저장" in text: btn.bind("<Button-1>", lambda e: self.export_data())
             else: btn.bind("<Button-1>", lambda e: self.import_data())
 
-        copyright_lbl = tk.Label(self.root, text="Copyright © 2026 inspeep. All rights reserved. 문의:admin@inspeep.com", 
+        copyright_lbl = tk.Label(self.root, text="Copyright © 2026 inspeep. All rights reserved. 문의: admin@inspeep.com", 
                                  font=("Malgun Gothic", 8), bg=COLOR_BG, fg=COLOR_TEXT_NOTE, pady=5)
         copyright_lbl.pack(side="bottom")
 
@@ -116,7 +116,6 @@ class MyQuickPhrasesApp:
         self.refresh_list()
 
     def check_update(self):
-        """서버에서 최신 버전을 확인합니다."""
         try:
             response = requests.get(UPDATE_URL, timeout=5)
             if response.status_code == 200:
@@ -128,7 +127,7 @@ class MyQuickPhrasesApp:
                     if messagebox.askyesno("업데이트 알림", f"새로운 버전(v{latest_version})이 출시되었습니다.\n다운로드 페이지로 이동할까요?"):
                         webbrowser.open(download_url)
         except Exception:
-            pass # 오프라인이거나 서버 오류 시 조용히 넘어감
+            pass 
 
     def _on_mousewheel(self, event): self.canvas.yview_scroll(int(-1*(event.delta/120)), "units")
     def toggle_always_on_top(self): self.root.attributes("-topmost", self.always_on_top_var.get())
