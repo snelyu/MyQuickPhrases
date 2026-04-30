@@ -7,7 +7,7 @@ import webbrowser
 import requests
 
 # --- 설정 및 디자인 상수 ---
-CURRENT_VERSION = "1.2.0"  # 버전 업데이트
+CURRENT_VERSION = "1.3.0"  # 버전 업데이트
 UPDATE_URL = "https://raw.githubusercontent.com/snelyu/MyQuickPhrases/main/version.json"
 
 COLOR_BG = "#F8FAFC"
