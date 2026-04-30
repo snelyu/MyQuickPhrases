@@ -1,0 +1,26 @@
+[
+    {
+        "content": "An error occurred, as shown in the attached photo. Why is that?",
+        "note": "첨부된 사진처럼 오류가 생깁니다. 왜죠?"
+    },
+    {
+        "content": "Please write the code implementing the solution.",
+        "note": "솔루션을 답는 코드를 만들어줘"
+    },
+    {
+        "content": "Please make a list the issues and solutions (please include the solutions in both English and korean), and let us know which files are needed for the fixes. Please do not include any code yet.",
+        "note": "이슈를 리스트업 그래고 해결책도 줘"
+    },
+    {
+        "content": "Please give me solutions (please include the solutions in both English and korean), and let us know which files are needed for the fixes. Please do not include any code yet.",
+        "note": "해결책을 줘"
+    },
+    {
+        "content": "Please Checker codes and list the issues and solutions (please include the solutions in both English and korean), and let us know which files are needed for the fixes. Please do not include any code yet.",
+        "note": "코드 확인을 해주고 리스트 업 해줘"
+    },
+    {
+        "content": "let us know which files are needed for the fixes. Please do not include any code yet.",
+        "note": "어떤 파일이 필요하나요?"
+    }
+]
